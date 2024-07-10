@@ -23,7 +23,7 @@ func startRepl() {
 				fmt.Println(err)
 			}
 			continue
-		else {
+		} else {
 			fmt.Println("Unknown command")
 			continue
 		}
