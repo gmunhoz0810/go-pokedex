@@ -3,6 +3,7 @@ package
 import (
 	"errors"
 	"fmt"
+	"github.com/gmunhoz0810/go-pokedex/internal/pokeapi"
 )
 
 func commandMapf(cfg *config) error {

@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gmunhoz0810/go_stuff/go-pokedex/internal/pokeapi"
+	"github.com/gmunhoz0810/go-pokedex/internal/pokeapi"
 )
 
 type config struct {
@@ -20,14 +20,17 @@ func startRepl() {
 	for {
 		fmt.Print("Pokedex > ")
 		reader.Scan()
+
 		words := cleanInput(reader.Text())
 		if len(words) == 0 {
 			continue
 		}
+
 		commandName := words[0]
+
 		command, exists := getCommands()[commandName]
 		if exists {
-			err := command.callback()
+			err := command.callback(cfg)
 			if err != nil {
 				fmt.Println(err)
 			}
